@@ -1,15 +1,16 @@
 # Importar la libreria de webdriver
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
-driver = webdriver.Firefox()
+options = FirefoxOptions()
+driver = webdriver.Firefox(options=options)
 
 # Maximizar el navegador
 driver.maximize_window()
 
-print("Bienvenido a Pycharm")
+print("Bienvenido a Pycharm desde firefox")
 
-# Acceder a la url https://demoqa.com/
+# Acceder a la url
 driver.get("https://www.saucedemo.com/")
 
 # Imprimir

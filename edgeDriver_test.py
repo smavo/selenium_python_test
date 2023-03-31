@@ -1,14 +1,14 @@
 # Importar la libreria de webdriver
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.edge.options import Options as EdgeOptions
 
-options = ChromeOptions()
-driver = webdriver.Chrome(options=options)
+options = EdgeOptions()
+driver = webdriver.Edge(options=options)
 
 # Maximizar el navegador
 driver.maximize_window()
 
-print("Bienvenido a Pycharm desde Chrome")
+print("Bienvenido a Pycharm desde Edge")
 
 # Acceder a la url
 driver.get("https://www.saucedemo.com/")
