@@ -3,5 +3,6 @@
 /.idea
 /venv
 # /Drivers
+/reports
 
 geckodriver.log

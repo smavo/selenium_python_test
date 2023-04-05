@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-class TestStringMethods(unittest.TestCase):
+class testUnitSample(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -38,3 +38,7 @@ class TestStringMethods(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# Correr en consola
+# python -m unittest 05_UnitTest_Demo.py    --> Correr solo prueba unitaria
+
