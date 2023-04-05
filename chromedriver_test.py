@@ -18,3 +18,7 @@ print(driver.title)
 
 # Finalizar el driver
 driver.close()
+
+# Más información sobre instalación de controladores del navegador
+# https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
+# https://pypi.org/project/webdriver-manager/
