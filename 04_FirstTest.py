@@ -17,8 +17,9 @@ driver.maximize_window()
 # Acceder al sitio
 driver.get("https://google.com")
 
-driver.find_element(By.NAME, "q").send_keys("Automation step by step")
+driver.find_element(By.NAME, "q").send_keys("Smavodev.com")
 driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
+print(driver.title)
 time.sleep(2)
 driver.close()
 driver.quit()

@@ -2,6 +2,7 @@
 /Material
 /.idea
 /venv
-# /Drivers
-
+/Drivers
+/reports
+/POM/Test/reports
 geckodriver.log
