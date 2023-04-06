@@ -24,7 +24,7 @@ class base_test(unittest.TestCase):
         # f.Navegar_T("https://www.saucedemo.com", 2)
         f.Tiempo_sleep(2)
 
-        f.Texto_XPath("//input[@id='user-name']", "standard_user", 2)
+        f.Texto_XPath("//input[@id='user-namee']", "standard_user", 2)
         f.Texto_ID("password", "secret_sauce", 2)
         f.Button_ID("login-button")
         f.Tiempo_sleep(2)
