@@ -1,6 +1,8 @@
 import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+
+
 # https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/
 
 class Funciones_Globales:
@@ -18,10 +20,12 @@ class Funciones_Globales:
     def Navegar(self, URL):
         self.driver.get(URL)
         self.driver.maximize_window()
+        print("Accediendo a la URL: " + str(URL))
 
     def Navegar_T(self, URL, Tiempo):
         self.driver.get(URL)
         self.driver.maximize_window()
+        print("Accediendo a la URL: " + str(URL))
         t = time.sleep(Tiempo)
         return t
 
@@ -29,6 +33,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.XPATH, xpath)
             value.send_keys(texto)
+            value.clear()
+            print("Ingresando datos en el campo --> {} el texto --> {} ".format(xpath, texto))
             t = time.sleep(tiempo)
             return t
         except NoSuchElementException as ex:
@@ -39,6 +45,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.ID, ID)
             value.send_keys(texto)
+            value.clear()
+            print("Ingresando datos en el campo --> {} el texto --> {} ".format(ID, texto))
             t = time.sleep(tiempo)
             return t
         except NoSuchElementException as ex:
@@ -49,6 +57,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.NAME, NAME)
             value.send_keys(texto)
+            value.clear()
+            print("Ingresando datos en el campo --> {} el texto --> {} ".format(NAME, texto))
             t = time.sleep(tiempo)
             return t
         except NoSuchElementException as ex:
@@ -59,6 +69,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.CLASS_NAME, CLASS_NAME)
             value.send_keys(texto)
+            value.clear()
+            print("Ingresando datos en el campo --> {} el texto --> {} ".format(CLASS_NAME, texto))
             t = time.sleep(tiempo)
             return t
         except NoSuchElementException as ex:
@@ -69,6 +81,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR)
             value.send_keys(texto)
+            value.clear()
+            print("Ingresando datos en el campo --> {} el texto --> {} ".format(CSS_SELECTOR, texto))
             t = time.sleep(tiempo)
             return t
         except NoSuchElementException as ex:
@@ -79,6 +93,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.TAG_NAME, TAG_NAME)
             value.send_keys(texto)
+            value.clear()
+            print("Ingresando datos en el campo --> {} el texto --> {} ".format(TAG_NAME, texto))
             t = time.sleep(tiempo)
             return t
         except NoSuchElementException as ex:
@@ -89,6 +105,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.XPATH, XPATH)
             value.click()
+            print("Damos click en el campo --> {}".format(XPATH))
+            time.sleep(2)
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento" + XPATH)
@@ -97,6 +115,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.ID, ID)
             value.click()
+            print("Damos click en el campo --> {}".format(ID))
+            time.sleep(2)
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento" + ID)
@@ -105,6 +125,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.NAME, NAME)
             value.click()
+            print("Damos click en el campo --> {}".format(NAME))
+            time.sleep(2)
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento" + NAME)
@@ -113,6 +135,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.CLASS_NAME, CLASS_NAME)
             value.click()
+            print("Damos click en el campo --> {}".format(CLASS_NAME))
+            time.sleep(2)
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento" + CLASS_NAME)
@@ -121,6 +145,8 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR)
             value.click()
+            print("Damos click en el campo --> {}".format(CSS_SELECTOR))
+            time.sleep(2)
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento" + CSS_SELECTOR)
@@ -129,8 +155,11 @@ class Funciones_Globales:
         try:
             value = self.driver.find_element(By.TAG_NAME, TAG_NAME)
             value.click()
+            print("Damos click en el campo --> {}".format(TAG_NAME))
+            time.sleep(2)
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento" + TAG_NAME)
 
-    
+    def Fin_Test(self):
+        print("============================= Se finalizo la prueba =============================")

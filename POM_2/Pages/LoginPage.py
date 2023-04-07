@@ -18,3 +18,4 @@ class LoginPage:
         f.Texto_ID("password", PASSWORD, TIEMPO)
         f.Button_ID("login-button")
         f.Tiempo_sleep(TIEMPO)
+        f.Fin_Test()
