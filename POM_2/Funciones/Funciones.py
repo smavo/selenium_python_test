@@ -65,6 +65,26 @@ class Funciones_Globales:
             print(ex.msg)
             print("No se encontró el elemento" + CLASS_NAME)
 
+    def Texto_CSS_SELECTOR(self, CSS_SELECTOR, texto, tiempo):
+        try:
+            value = self.driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR)
+            value.send_keys(texto)
+            t = time.sleep(tiempo)
+            return t
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento" + CSS_SELECTOR)
+
+    def Texto_TAG_NAME(self, TAG_NAME, texto, tiempo):
+        try:
+            value = self.driver.find_element(By.TAG_NAME, TAG_NAME)
+            value.send_keys(texto)
+            t = time.sleep(tiempo)
+            return t
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento" + TAG_NAME)
+
     def Button_XPATH(self, XPATH):
         try:
             value = self.driver.find_element(By.XPATH, XPATH)
@@ -97,3 +117,20 @@ class Funciones_Globales:
             print(ex.msg)
             print("No se encontró el elemento" + CLASS_NAME)
 
+    def Button_CSS_SELECTOR(self, CSS_SELECTOR):
+        try:
+            value = self.driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR)
+            value.click()
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento" + CSS_SELECTOR)
+
+    def Button_TAG_NAME(self, TAG_NAME):
+        try:
+            value = self.driver.find_element(By.TAG_NAME, TAG_NAME)
+            value.click()
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento" + TAG_NAME)
+
+    
