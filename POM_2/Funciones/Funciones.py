@@ -1,6 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.select import Select
 
 
 # https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/
@@ -163,3 +164,38 @@ class Funciones_Globales:
 
     def Fin_Test(self):
         print("============================= Se finalizo la prueba =============================")
+
+    # https://www.selenium.dev/documentation/webdriver/elements/information/
+    def Select_XPath(self, XPATH, TEXTO, TIEMPO):
+        try:
+            sel = Select(self.driver.find_element(By.XPATH, XPATH))
+            time.sleep(2)
+            sel.select_by_visible_text(TEXTO)
+            time.sleep(5)
+            print("El campo seleccionado es: --> {}".format(TEXTO))
+            time.sleep(TIEMPO)
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento: --> " + XPATH)
+
+    def Select_XPath_Tipo(self, XPATH, TIPO, DATO, TIEMPO):
+        try:
+            sel = Select(self.driver.find_element(By.XPATH, XPATH))
+            time.sleep(1)
+
+            if TIPO == "text":
+                sel.select_by_visible_text(DATO)
+            elif TIPO == "value":
+                sel.select_by_value(DATO)
+            elif TIPO == "index":
+                sel.select_by_index(DATO)
+
+            time.sleep(1)
+
+            print("El campo seleccionado es: --> {}".format(DATO))
+            time.sleep(TIEMPO)
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento: --> " + XPATH)
