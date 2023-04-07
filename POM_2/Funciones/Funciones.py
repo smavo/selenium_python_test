@@ -33,8 +33,8 @@ class Funciones_Globales:
     def Texto_XPath(self, xpath, texto, tiempo):
         try:
             value = self.driver.find_element(By.XPATH, xpath)
-            value.send_keys(texto)
             value.clear()
+            value.send_keys(texto)
             print("Ingresando datos en el campo --> {} el texto --> {} ".format(xpath, texto))
             t = time.sleep(tiempo)
             return t
@@ -45,8 +45,8 @@ class Funciones_Globales:
     def Texto_ID(self, ID, texto, tiempo):
         try:
             value = self.driver.find_element(By.ID, ID)
-            value.send_keys(texto)
             value.clear()
+            value.send_keys(texto)
             print("Ingresando datos en el campo --> {} el texto --> {} ".format(ID, texto))
             t = time.sleep(tiempo)
             return t
@@ -57,8 +57,8 @@ class Funciones_Globales:
     def Texto_NAME(self, NAME, texto, tiempo):
         try:
             value = self.driver.find_element(By.NAME, NAME)
-            value.send_keys(texto)
             value.clear()
+            value.send_keys(texto)
             print("Ingresando datos en el campo --> {} el texto --> {} ".format(NAME, texto))
             t = time.sleep(tiempo)
             return t
@@ -69,8 +69,8 @@ class Funciones_Globales:
     def Texto_CLASS_NAME(self, CLASS_NAME, texto, tiempo):
         try:
             value = self.driver.find_element(By.CLASS_NAME, CLASS_NAME)
-            value.send_keys(texto)
             value.clear()
+            value.send_keys(texto)
             print("Ingresando datos en el campo --> {} el texto --> {} ".format(CLASS_NAME, texto))
             t = time.sleep(tiempo)
             return t
@@ -81,8 +81,8 @@ class Funciones_Globales:
     def Texto_CSS_SELECTOR(self, CSS_SELECTOR, texto, tiempo):
         try:
             value = self.driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR)
-            value.send_keys(texto)
             value.clear()
+            value.send_keys(texto)
             print("Ingresando datos en el campo --> {} el texto --> {} ".format(CSS_SELECTOR, texto))
             t = time.sleep(tiempo)
             return t
@@ -93,8 +93,8 @@ class Funciones_Globales:
     def Texto_TAG_NAME(self, TAG_NAME, texto, tiempo):
         try:
             value = self.driver.find_element(By.TAG_NAME, TAG_NAME)
-            value.send_keys(texto)
             value.clear()
+            value.send_keys(texto)
             print("Ingresando datos en el campo --> {} el texto --> {} ".format(TAG_NAME, texto))
             t = time.sleep(tiempo)
             return t
