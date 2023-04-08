@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 # service = Service(executable_path=".\Drivers\chromedriver.exe")
-service = Service(executable_path="./Drivers/chromedriver.exe")
+service = Service(executable_path="../Drivers/chromedriver.exe")
 driver = webdriver.Chrome(service=service)
 driver.set_page_load_timeout(5)
 
