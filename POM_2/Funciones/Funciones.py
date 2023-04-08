@@ -30,6 +30,9 @@ class Funciones_Globales:
         t = time.sleep(Tiempo)
         return t
 
+    # =================================== FUNCIONES POR COMPONENTES ===================================
+
+    # Texto: XPATH, ID, NAME, CLASS_NAME, CSS_SELECTOR, TAG_NAME
     def Texto_XPath(self, xpath, texto, tiempo):
         try:
             value = self.driver.find_element(By.XPATH, xpath)
@@ -102,6 +105,7 @@ class Funciones_Globales:
             print(ex.msg)
             print("No se encontró el elemento" + TAG_NAME)
 
+    # BUTTON: XPATH, ID, NAME, CLASS_NAME, CSS_SELECTOR, TAG_NAME
     def Button_XPATH(self, XPATH):
         try:
             value = self.driver.find_element(By.XPATH, XPATH)
@@ -165,6 +169,7 @@ class Funciones_Globales:
     def Fin_Test(self):
         print("============================= Se finalizo la prueba =============================")
 
+    # SELECTOR: XPATH
     # https://www.selenium.dev/documentation/webdriver/elements/information/
     def Select_XPath(self, XPATH, TEXTO, TIEMPO):
         try:
@@ -200,6 +205,7 @@ class Funciones_Globales:
             print(ex.msg)
             print("No se encontró el elemento: --> " + XPATH)
 
+    # CHECK_BOX: XPATH, ID, CLASS_NAME, NAME
     def Check_Xpath(self, XPATH, TIEMPO):
         try:
             value = self.driver.find_element(By.XPATH, XPATH)
@@ -258,3 +264,97 @@ class Funciones_Globales:
             for nun in args:
                 print(ex.msg)
                 print("No se encontró el elemento: --> " + nun)
+
+    # =================================== FUNCIONES GLOBALES POR COMPONENTES ===================================
+
+    # TEXTO MIXTO: XPATH, ID, NAME, CLASS_NAME
+    def Texto_TYPE(self, tipo, selector, texto, tiempo):
+        if tipo == "xpath":
+            try:
+                value = self.driver.find_element(By.XPATH, selector)
+                value.clear()
+                value.send_keys(texto)
+                print("Ingresando datos en el campo --> {} el texto --> {} ".format(selector, texto))
+                t = time.sleep(tiempo)
+                return t
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + selector)
+
+        elif tipo == "id":
+            try:
+                value = self.driver.find_element(By.ID, selector)
+                value.clear()
+                value.send_keys(texto)
+                print("Ingresando datos en el campo --> {} el texto --> {} ".format(selector, texto))
+                t = time.sleep(tiempo)
+                return t
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + selector)
+
+        elif tipo == "name":
+            try:
+                value = self.driver.find_element(By.NAME, selector)
+                value.clear()
+                value.send_keys(texto)
+                print("Ingresando datos en el campo --> {} el texto --> {} ".format(selector, texto))
+                t = time.sleep(tiempo)
+                return t
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + selector)
+
+        elif tipo == "class":
+            try:
+                value = self.driver.find_element(By.CLASS_NAME, selector)
+                value.clear()
+                value.send_keys(texto)
+                print("Ingresando datos en el campo --> {} el texto --> {} ".format(selector, texto))
+                t = time.sleep(tiempo)
+                return t
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + selector)
+
+    # BUTTON MIXTO: XPATH, ID, NAME, CLASS_NAME
+    def Button_TYPE(self, TIPO, SELECTOR, TIEMPO):
+        if TIPO == "xpath":
+            try:
+                value = self.driver.find_element(By.XPATH, SELECTOR)
+                value.click()
+                print("Damos click en el campo --> {}".format(SELECTOR))
+                time.sleep(TIEMPO)
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + SELECTOR)
+
+        elif TIPO == "id":
+            try:
+                value = self.driver.find_element(By.ID, SELECTOR)
+                value.click()
+                print("Damos click en el campo --> {}".format(SELECTOR))
+                time.sleep(TIEMPO)
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + SELECTOR)
+
+        elif TIPO == "name":
+            try:
+                value = self.driver.find_element(By.NAME, SELECTOR)
+                value.click()
+                print("Damos click en el campo --> {}".format(SELECTOR))
+                time.sleep(TIEMPO)
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + SELECTOR)
+
+        elif TIPO == "class":
+            try:
+                value = self.driver.find_element(By.CLASS_NAME, SELECTOR)
+                value.click()
+                print("Damos click en el campo --> {}".format(SELECTOR))
+                time.sleep(TIEMPO)
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento" + SELECTOR)
