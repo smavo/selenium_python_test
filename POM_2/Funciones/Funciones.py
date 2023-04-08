@@ -199,3 +199,62 @@ class Funciones_Globales:
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento: --> " + XPATH)
+
+    def Check_Xpath(self, XPATH, TIEMPO):
+        try:
+            value = self.driver.find_element(By.XPATH, XPATH)
+            # value = self.driver.execute_script("arguments[0].scrollIntoView()", value)
+            value.click()
+            print("Click en el elemento: --> {}".format(XPATH))
+            time.sleep(TIEMPO)
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento: --> " + XPATH)
+
+    def Check_ID(self, ID, TIEMPO):
+        try:
+            value = self.driver.find_element(By.ID, ID)
+            value.click()
+            print("Click en el elemento: --> {}".format(ID))
+            time.sleep(TIEMPO)
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento: --> " + ID)
+
+    def Check_CLASS_NAME(self, CLASS_NAME, TIEMPO):
+        try:
+            value = self.driver.find_element(By.CLASS_NAME, CLASS_NAME)
+            value.click()
+            print("Click en el elemento: --> {}".format(CLASS_NAME))
+            time.sleep(TIEMPO)
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento: --> " + CLASS_NAME)
+
+    def Check_NAME(self, NAME, TIEMPO):
+        try:
+            value = self.driver.find_element(By.NAME, NAME)
+            value.click()
+            print("Click en el elemento: --> {}".format(NAME))
+            time.sleep(TIEMPO)
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("No se encontró el elemento: --> " + NAME)
+
+    def Check_XPath_Multiple(self, TIEMPO, *args):
+        try:
+            for nun in args:
+                value = self.driver.find_element(By.XPATH, nun)
+                value.click()
+                print("Click en el elemento: --> {}".format(nun))
+                time.sleep(TIEMPO)
+                return TIEMPO
+
+        except NoSuchElementException as ex:
+            for nun in args:
+                print(ex.msg)
+                print("No se encontró el elemento: --> " + nun)
