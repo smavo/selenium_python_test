@@ -358,3 +358,51 @@ class Funciones_Globales:
             except NoSuchElementException as ex:
                 print(ex.msg)
                 print("No se encontró el elemento" + SELECTOR)
+
+    def Existe_Selector(self, tipo, selector, tiempo):
+        if tipo == "xpath":
+            try:
+                value = self.driver.find_element(By.XPATH, selector)
+                print("El elemento {} -> Existe ".format(selector))
+                t = time.sleep(tiempo)
+                return "Existe"
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento: " + selector)
+                return "No existe"
+
+        elif tipo == "id":
+            try:
+                value = self.driver.find_element(By.ID, selector)
+                print("El elemento {} -> Existe ".format(selector))
+                t = time.sleep(tiempo)
+                return "Existe"
+
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento: " + selector)
+                return "No existe"
+
+        elif tipo == "name":
+            try:
+                value = self.driver.find_element(By.NAME, selector)
+                print("El elemento {} -> Existe ".format(selector))
+                t = time.sleep(tiempo)
+                return "Existe"
+
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento: " + selector)
+                return "No existe"
+
+        elif tipo == "class":
+            try:
+                value = self.driver.find_element(By.CLASS_NAME, selector)
+                print("El elemento {} -> Existe ".format(selector))
+                t = time.sleep(tiempo)
+                return "Existe"
+
+            except NoSuchElementException as ex:
+                print(ex.msg)
+                print("No se encontró el elemento: " + selector)
+                return "No existe"
