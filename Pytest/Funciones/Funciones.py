@@ -6,7 +6,7 @@ from selenium.webdriver.support.select import Select
 
 # https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/
 
-class Funciones_Globales:
+class Funciones_Globales_Pyest:
 
     def __init__(self, driver):
         self.driver = driver
@@ -31,7 +31,9 @@ class Funciones_Globales:
         return t
 
     def cerrar_test(self):
-        time.sleep(2)
+        time.sleep(3)
+        print("============================= Se finalizo la prueba =============================")
+        print(" ")
         self.driver.close()
         self.driver.quit()
 
@@ -170,9 +172,6 @@ class Funciones_Globales:
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento: " + TAG_NAME)
-
-    def Fin_Test(self):
-        print("============================= Se finalizo la prueba =============================")
 
     # SELECTOR: XPATH
     # https://www.selenium.dev/documentation/webdriver/elements/information/
