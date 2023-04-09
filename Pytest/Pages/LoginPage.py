@@ -1,4 +1,4 @@
-
+import pytest
 from Pytest.Funciones.Funciones import Funciones_Globales_Pyest
 
 class LoginPage:

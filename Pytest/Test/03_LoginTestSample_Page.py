@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChomeOptions
 from Pytest.Funciones.Funciones import Funciones_Globales_Pyest
-from Pages.LoginPage import LoginPage
+from Pytest.Pages.LoginPage import LoginPage
 
 tm = 1
 global driver
