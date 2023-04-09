@@ -6,3 +6,5 @@
 /reports
 /POM/Test/reports
 geckodriver.log
+
+POM_2/Tests/.env

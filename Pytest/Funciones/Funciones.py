@@ -411,3 +411,13 @@ class Funciones_Globales:
                 print(ex.msg)
                 print("No se encontró el elemento: " + selector)
                 return "No existe"
+
+    # Seleccionar elemento por Xpath
+    def SEXPATH(self, selector):
+        value = self.driver.find_element(By.XPATH, selector)
+        return value
+
+    # Seleccionar elemento por ID
+    def SEID(self, selector):
+        value = self.driver.find_element(By.XPATH, selector)
+        return value
