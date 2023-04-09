@@ -27,3 +27,5 @@ class LoginPage:
         f = Funciones_Globales_Pyest(driver)
         f.Button_TYPE("xpath", "//a[@class='nav-link'][contains(.,'Logout')]", 1)
         f.cerrar_test()
+
+    # def Modulo_System_Inf(self):
