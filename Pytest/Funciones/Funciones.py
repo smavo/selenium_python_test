@@ -24,7 +24,7 @@ class Funciones_Globales_Pyest:
         self.driver.maximize_window()
         print("Accediendo a la URL: " + str(URL))
 
-    def Navegar_T(self, URL, Tiempo):
+    def Navegar_T(self, URL: object, Tiempo: object) -> object:
         self.driver.get(URL)
         self.driver.maximize_window()
         print("Accediendo a la URL: " + str(URL))
