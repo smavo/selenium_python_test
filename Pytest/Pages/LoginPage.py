@@ -1,5 +1,7 @@
 import pytest
 from Pytest.Funciones.Funciones import Funciones_Globales_Pyest
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 
 class LoginPage:
 
@@ -47,4 +49,37 @@ class LoginPage:
     def Modulo_Seleccionado(self, menu):
         driver = self.driver
         f = Funciones_Globales_Pyest(driver)
-        f.Button_TYPE("xpath", "//a[contains(.,'"+menu+"')]", 2)
+        f.Button_TYPE("xpath", "//a[contains(.,'" + menu + "')]", 2)
+
+    def valid_assert_xpath(self, selector):
+        driver = self.driver
+        valid = driver.find_element(By.XPATH, "//a[contains(.,'" + selector + "')]").text
+        print(valid)
+
+        if valid == selector:
+            print("===================================")
+            print("Estas en el Menu de " + selector)
+            print("===================================")
+            assert valid == selector, "Menu " + selector + "seleccionado correctamente"
+        else:
+            assert valid != selector, "No es el Menu especificado"
+
+    def Modulo_Seleccionado_valid(self, menu, selector):
+        driver = self.driver
+        f = Funciones_Globales_Pyest(driver)
+        f.Button_TYPE("xpath", "//a[contains(.,'" + menu + "')]", 2)
+
+        valid = driver.find_element(By.XPATH, "//a[contains(.,'" + selector + "')]").text
+        print(valid)
+
+        try:
+            if valid == selector:
+                print("===================================")
+                print("Estas en el Menu de " + selector)
+                print("===================================")
+                assert valid == selector, "Menu " + selector + "seleccionado correctamente"
+
+        except NoSuchElementException as ex:
+            print(ex.msg)
+            print("El menu "+selector+"no es el correcto")
+
