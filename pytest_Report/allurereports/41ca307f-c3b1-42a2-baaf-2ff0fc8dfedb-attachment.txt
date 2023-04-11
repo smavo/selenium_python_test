@@ -1,0 +1,11 @@
+Accediendo a la URL: https://opensource-demo.orangehrmlive.com/
+Iniciando nuestro Test
+Ingresando datos en el campo --> username el texto --> Admin 
+Ingresando datos en el campo --> password el texto --> admin123 
+Damos click en el campo --> //button[@type='submit'][contains(.,'Login')]
+Damos click en el campo --> //a[contains(.,'Leave')]
+Damos click en el campo --> //a[contains(.,'PIM')]
+Damos click en el campo --> //span[@class='oxd-userdropdown-tab']
+Damos click en el campo --> //a[contains(.,'Logout')]
+============================= Se finalizo la prueba =============================
+ 
