@@ -7,7 +7,7 @@ pip install html-testRunner
 
 ## Instalar pytest.html
 ```
-pip instal pytest-htmls
+pip instal pytest-html
 ```
 # Crear test con pytest-html
 # pytest --html=report1.html
