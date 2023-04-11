@@ -1,7 +1,9 @@
+import allure
+
 from Funciones.Funciones import Funciones_Globales_Pyest
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-
+from allure_commons.types import AttachmentType
 
 class LoginPage:
 
@@ -50,6 +52,7 @@ class LoginPage:
         driver = self.driver
         f = Funciones_Globales_Pyest(driver)
         f.Button_TYPE("xpath", "//a[contains(.,'" + menu + "')]", 3)
+        allure.attach(driver.get_screenshot_as_png(), name="Imagen_"+menu, attachment_type=allure.attachment_type.PNG)
 
     def valid_assert_xpath(self, selector):
         driver = self.driver

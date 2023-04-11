@@ -17,6 +17,8 @@ pip instal pytest-html
 
 ## Reportes con Allure Reports
 ```
+https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/
+https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.21.0/
 https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.9/
 ```
 ### Agregar a las variables de entorno la ruta donde se colocó el allure
