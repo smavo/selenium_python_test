@@ -1,4 +1,5 @@
 import time
+import pytest
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
@@ -6,7 +7,7 @@ from selenium.webdriver.support.select import Select
 
 # https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/
 
-class Funciones_Globales:
+class Funciones_Globales_Pyest:
 
     def __init__(self, driver):
         self.driver = driver
@@ -23,7 +24,7 @@ class Funciones_Globales:
         self.driver.maximize_window()
         print("Accediendo a la URL: " + str(URL))
 
-    def Navegar_T(self, URL, Tiempo):
+    def Navegar_T(self, URL: object, Tiempo: object) -> object:
         self.driver.get(URL)
         self.driver.maximize_window()
         print("Accediendo a la URL: " + str(URL))
@@ -31,7 +32,9 @@ class Funciones_Globales:
         return t
 
     def cerrar_test(self):
-        time.sleep(2)
+        time.sleep(3)
+        print("============================= Se finalizo la prueba =============================")
+        print(" ")
         self.driver.close()
         self.driver.quit()
 
@@ -170,9 +173,6 @@ class Funciones_Globales:
         except NoSuchElementException as ex:
             print(ex.msg)
             print("No se encontró el elemento: " + TAG_NAME)
-
-    def Fin_Test(self):
-        print("============================= Se finalizo la prueba =============================")
 
     # SELECTOR: XPATH
     # https://www.selenium.dev/documentation/webdriver/elements/information/
@@ -411,3 +411,13 @@ class Funciones_Globales:
                 print(ex.msg)
                 print("No se encontró el elemento: " + selector)
                 return "No existe"
+
+    # Seleccionar elemento por Xpath
+    def SEXPATH(self, selector):
+        value = self.driver.find_element(By.XPATH, selector)
+        return value
+
+    # Seleccionar elemento por ID
+    def SEID(self, selector):
+        value = self.driver.find_element(By.XPATH, selector)
+        return value

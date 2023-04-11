@@ -6,3 +6,7 @@
 /reports
 /POM/Test/reports
 geckodriver.log
+
+.env
+
+.pytest_cache
