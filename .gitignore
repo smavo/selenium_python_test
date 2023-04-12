@@ -10,3 +10,5 @@ geckodriver.log
 .env
 
 .pytest_cache
+
+pytest_Report/allurereports
